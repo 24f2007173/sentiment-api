@@ -14,6 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "Sentiment API is running"}
 class Sentences(BaseModel):
     sentences: List[str]
 
@@ -46,3 +49,4 @@ def sentiment(data: Sentences):
         })
 
     return {"results": results}
+
