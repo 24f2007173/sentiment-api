@@ -17,6 +17,7 @@ app.add_middleware(
 @app.get("/")
 def root():
     return {"message": "Sentiment API is running"}
+    
 class Sentences(BaseModel):
     sentences: List[str]
 
@@ -49,4 +50,5 @@ def sentiment(data: Sentences):
         })
 
     return {"results": results}
+
 
